@@ -1,0 +1,270 @@
+:root {
+  --site-max-width: calc(1440px + calc(var(--site-padding-inline) * 2));
+  --site-min-width: 375px;
+  --site-padding-inline: 20px;
+
+  /* Purple */
+  --purple-500: hsl(263, 55%, 52%);
+
+  /* Neutral */
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --black: hsl(0, 0%, 7%);
+}
+
+/* ========================================================================================== */
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+html {
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: geometricPrecision;
+}
+
+body {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: var(--site-min-width);
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu,
+    "Noto Sans", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  scrollbar-gutter: stable;
+  overflow-x: hidden;
+}
+
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ul dl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+dl,
+ul li,
+ul,
+li,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+img {
+  vertical-align: top;
+  border-style: none;
+}
+
+/* ========================================================================================== */
+
+.container {
+  max-width: var(--site-max-width);
+  min-width: var(--site-min-width);
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: var(--site-padding-inline);
+}
+
+.html {
+  height: -webkit-fill-available;
+}
+
+.body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  font-size: 18px;
+  color: snow;
+}
+
+.wrapper {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.site-content {
+  flex: 1;
+}
+
+.text {
+  font-family: "Barlow Semi Condensed", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Ubuntu, "Noto Sans", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.text-600 {
+  font-weight: 600;
+}
+
+/* ========================================================================================== */
+
+.main__heading {
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  padding: 50px 0px;
+  margin-bottom: 100px;
+}
+
+.user {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 32px 32px;
+  align-items: center;
+}
+
+.user__avatar {
+  grid-row: span 2;
+  border-radius: 50%;
+  outline: 2px solid var(--grey-400);
+}
+
+.user__status {
+  font-size: 0.9em;
+  color: var(--grey-200);
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  padding-bottom: 100px;
+}
+
+.item {
+  border-radius: 10px;
+  padding: 20px 30px;
+}
+
+.item-q {
+  background-image: url("../icons/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: right 100px top 2px;
+  background-size: 150px;
+}
+
+.item:first-child {
+  background-color: var(--purple-500);
+  grid-column: span 2;
+}
+
+.item:nth-child(2) {
+  background-color: var(--grey-500);
+}
+
+.item:nth-child(3) {
+  background-color: snow;
+  grid-row: span 2;
+}
+
+.item:nth-child(3) .user__name,
+.item:nth-child(4) .user__name {
+  color: var(--black);
+}
+
+.item:nth-child(3) .user__status,
+.item:nth-child(4) .user__status {
+  color: var(--grey-500);
+}
+
+.item:nth-child(3) .item__heading,
+.item:nth-child(4) .item__heading {
+  color: var(--black);
+}
+
+.item:nth-child(3) .item__content,
+.item:nth-child(4) .item__content {
+  color: var(--grey-500);
+}
+
+.item:nth-child(4) {
+  background-color: snow;
+}
+
+.item:nth-child(5) {
+  background-color: var(--black);
+  grid-column: span 2;
+}
+
+.item__heading {
+  margin-top: 20px;
+  font-size: 1.4em;
+  letter-spacing: 1px;
+  line-height: 120%;
+}
+
+.item__content {
+  margin-top: 20px;
+  color: var(--grey-200);
+  letter-spacing: 0.5px;
+  line-height: 140%;
+}
+
+@media (max-width: 1200px) {
+  .items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .item:first-child {
+    grid-column: revert;
+  }
+
+  .item:nth-child(3) {
+    grid-row: revert;
+  }
+
+  .item:nth-child(5) {
+    grid-column: revert;
+  }
+}
